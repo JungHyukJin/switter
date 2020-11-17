@@ -26,5 +26,35 @@
 
 ---
 
+#### Setup
 
+- 설치
+
+```bash
+// using module bundle로 사용하자.
+npm install --save firebase
+```
+
+```js
+// firebase.js 새로운 파일 생성
+
+import firebase from 'firebase/app';
+
+const firebaseConfig = {
+	apiKey: process.env.REACT_APP_API_KEY,
+	...
+	... (firebase사이트 로그인 > 콘솔클릭,이동 > 프로젝트 생성 > firebase SDK추가 )
+};
+
+export default firebase.initializeApp(firebaseConfig);
+```
+
+- 깃헙 보안을 위해서 firebaseConfig관련 코드를 전부 업로드 하지 않고, 변수를 만들고 .env파일에 추가.
+
+```
+// .env 파일생성
+REACT_APP_API_KEY=.... 로 
+```
+
+- 그리고 .gitignore파일 마지막에 .env파일을 추가해준다.
 
