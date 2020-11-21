@@ -1,5 +1,11 @@
 import React from 'react';
 
-const Home = () => <span>Home</span>;
+const Home = () => {
+  <div>
+    <form>
+      <input></input>
+    </form>
+  </div>;
+};
 
 export default Home;
