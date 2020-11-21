@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import AppRouter from './Router';
 import { authService } from 'fbase';
+import fbase from 'fbase';
 
 function App() {
   const [init, setInit] = useState(false);
@@ -18,7 +19,7 @@ function App() {
 
   return (
     <>
-      {init ? <AppRouter isLoggedIn={true} /> : 'Initializing...'}
+      {init ? <AppRouter isLoggedIn={isLoggedIn} /> : 'Initializing...'}
       <footer>&copy; {new Date().getFullYear()} Switter </footer>
     </>
   );
