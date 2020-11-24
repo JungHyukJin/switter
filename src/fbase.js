@@ -1,6 +1,7 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
+import 'firebase/storage';
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -20,3 +21,6 @@ export const authService = firebase.auth();
 
 // firbase의 Cloud Firestore
 export const dbService = firebase.firestore();
+
+// firbase의 Storage, bucket
+export const storageService = firebase.storage();

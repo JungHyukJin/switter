@@ -46,15 +46,18 @@ const Switt = ({ swittObj, isOwner }) => {
           <button onClick={onToggleEditing}>Cancel</button>
         </>
       ) : (
-        <button>
+        <>
           <h4>{swittObj.text}</h4>
+          {swittObj.attachmentUrl && (
+            <img alt="?" src={swittObj.attachmentUrl} width="50px" />
+          )}
           {isOwner && (
             <>
               <button onClick={onToggleEditing}>Edit Switt</button>
               <button onClick={onDeleteClick}>Delete Switt</button>
             </>
           )}
-        </button>
+        </>
       )}
     </div>
   );
