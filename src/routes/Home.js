@@ -1,7 +1,7 @@
 import { dbService, storageService } from 'fbase';
 import { v4 as uuidv4 } from 'uuid';
 import React, { useEffect, useState } from 'react';
-import Switt from './Switt';
+import Switt from '../components/Switt';
 
 const Home = ({ userObj }) => {
   const [switt, setSwitt] = useState('');
@@ -31,7 +31,7 @@ const Home = ({ userObj }) => {
       // uuid는 랜덤 id를 생성해준다. npm install uuid & import 필요
       const response = await attachmentRef.putString(attachment, 'data_url');
       attachmentUrl = await response.ref.getDownloadURL();
-      console.log(response);
+      // console.log(response);
     }
     const swittObj = {
       text: switt,
