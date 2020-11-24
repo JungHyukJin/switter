@@ -1,5 +1,7 @@
 import { dbService, storageService } from 'fbase';
 import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash, faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 
 const Switt = ({ swittObj, isOwner }) => {
   const [editing, setEditing] = useState(false);
@@ -31,32 +33,38 @@ const Switt = ({ swittObj, isOwner }) => {
   };
 
   return (
-    <div>
+    <div className="nweet">
       {editing ? (
         <>
-          <form onSubmit={onSubmit}>
+          <form onSubmit={onSubmit} className="container nweetEdit">
             <input
               type="text"
               placeholder="Edit your switt"
               value={newSwitt}
               required
+              autoFocus
               onChange={onChange}
+              className="formInput"
             />
-            <input type="submit" value="Update" />
+            <input type="submit" value="Update" className="formBtn" />
           </form>
-          <button onClick={onToggleEditing}>Cancel</button>
+          <span onClick={onToggleEditing} className="formBtn cancelBtn">
+            Cancel
+          </span>
         </>
       ) : (
         <>
           <h4>{swittObj.text}</h4>
-          {swittObj.attachmentUrl && (
-            <img alt="?" src={swittObj.attachmentUrl} width="50px" />
-          )}
+          {swittObj.attachmentUrl && <img src={swittObj.attachmentUrl} />}
           {isOwner && (
-            <>
-              <button onClick={onToggleEditing}>Edit Switt</button>
-              <button onClick={onDeleteClick}>Delete Switt</button>
-            </>
+            <div class="nweet__actions">
+              <span onClick={onDeleteClick}>
+                <FontAwesomeIcon icon={faTrash} />
+              </span>
+              <span onClick={onToggleEditing}>
+                <FontAwesomeIcon icon={faPencilAlt} />
+              </span>
+            </div>
           )}
         </>
       )}
