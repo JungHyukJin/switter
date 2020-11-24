@@ -1,4 +1,4 @@
-import { dbService } from 'fbase';
+import { dbService, storageService } from 'fbase';
 import React, { useState } from 'react';
 
 const Switt = ({ swittObj, isOwner }) => {
@@ -10,6 +10,7 @@ const Switt = ({ swittObj, isOwner }) => {
     // console.log(ok);
     if (ok) {
       await dbService.doc(`switts/${swittObj.id}`).delete();
+      await storageService.refFromURL(swittObj.attachmentUrl).delete();
     }
   };
   const onToggleEditing = () => {
