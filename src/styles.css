@@ -1,13 +1,13 @@
 @import 'https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css';
 
 * {
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 }
 
 input {
   all: unset;
-  box-sizing: border-box;
   appearance: none;
+  box-sizing: border-box;
 }
 
 body {
@@ -59,6 +59,7 @@ form {
   text-align: center;
   background-color: white;
   color: black;
+  box-sizing: border-box;
 }
 
 .formBtn {
@@ -70,6 +71,7 @@ form {
   border-radius: 20px;
   background-color: #04aaff;
   cursor: pointer;
+  box-sizing: border-box;
 }
 
 .cancelBtn {
@@ -185,6 +187,7 @@ form {
   display: flex;
   flex-direction: column;
   color: rgba(0, 0, 0, 0.8);
+  box-sizing: border-box;
 }
 
 .nweet h4 {
