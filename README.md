@@ -1,10 +1,29 @@
-## Twitter Clone Coding
+# Twitter Clone Coding
 
 > React JS + Firebase
 >
 > https://junghyukjin.github.io/switter <<< CLICK!!
 
 ----
+
+> **2020.11.4 ~ 11.26**
+
+> **Stack**: HTML, CSS, React JS, Responsive web app
+>
+> **Tools :** Visual Studio Code, Firebase(APIs, storage, authentification etc...)
+
+---
+
+- 주요기능: 
+  1. 이메일 로그인, 구글 로그인, 깃헙 로그인.
+  2. Firebase의 API를 사용하여 접속한 사람과 실시간 채팅이 가능, 사진첨부 및 글 삭제 가능.
+  3. 자신의 프로필명 변경 가능, 로그아웃 구현.
+
+<img src="README.assets/image-20201126213732173.png" alt="image-20201126213732173"  />
+
+---
+
+---
 
 #### Firebase?
 
